@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-AI ChatBot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="floating-clouds">
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+        <div class="cloud cloud-3">☁️</div>
+    </div>
+    
+    <div class="floating-hearts">
+        <div class="heart">💖</div>
+        <div class="heart">💝</div>
+        <div class="heart">💗</div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="chatbot-container">
+        <!-- Header -->
+        <div class="chatbot-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <div class="avatar-circle">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="header-text">
+                    <h1>Multi-AI ChatBot</h1>
+                    <p>Online • Developed by Kumar Harsh</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kh949118@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-9279157296</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h2 class="sidebar-title">
+                    <i class="fas fa-star"></i>
+                    AI Assistants
+                </h2>
+
+                <!-- Assistant Cards -->
+                <div class="assistant-cards">
+                    <div class="assistant-card active" data-assistant="general">
+                        <div class="card-emoji">🔮</div>
+                        <div class="card-content">
+                            <h3>General AI</h3>
+                            <p>All-purpose assistant</p>
+                        </div>
+                        <span class="status-badge free">Free</span>
+                    </div>
+
+                    <div class="assistant-card" data-assistant="news">
+                        <div class="card-emoji">📰</div>
+                        <div class="card-content">
+                            <h3>News Assistant</h3>
+                            <p>Latest updates</p>
+                        </div>
+                        <span class="status-badge live">Live</span>
+                    </div>
+
+                    <div class="assistant-card" data-assistant="health">
+                        <div class="card-emoji">🏥</div>
+                        <div class="card-content">
+                            <h3>Health & Wellness</h3>
+                            <p>Medical guidance</p>
+                        </div>
+                        <span class="status-badge safe">Safe</span>
+                    </div>
+
+                    <div class="assistant-card" data-assistant="ecommerce">
+                        <div class="card-emoji">🛒</div>
+                        <div class="card-content">
+                            <h3>E-commerce</h3>
+                            <p>Shopping help</p>
+                        </div>
+                        <span class="status-badge hot">Hot</span>
+                    </div>
+
+                    <div class="assistant-card" data-assistant="travel">
+                        <div class="card-emoji">✈️</div>
+                        <div class="card-content">
+                            <h3>Travel & Hospitality</h3>
+                            <p>Trip planning</p>
+                        </div>
+                        <span class="status-badge new">New</span>
+                    </div>
+                </div>
+
+                <!-- File Upload Section -->
+                <div class="upload-section">
+                    <h3 class="upload-title">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Upload Files & URLs
+                    </h3>
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-file-upload upload-icon"></i>
+                        <p class="upload-text">Click to upload or drag & drop</p>
+                        <p class="upload-subtext">PDF, TXT, JPG, PNG files (Max 10MB)</p>
+                        <input type="file" id="fileInput" accept=".pdf,.txt,.jpg,.jpeg,.png" multiple>
+                    </div>
+                    <div class="url-input">
+                        <input type="text" placeholder="Paste website URL here..." class="url-field">
+                        <button class="process-btn">Process Content</button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn" id="clearChat">
+                        <i class="fas fa-broom"></i>
+                        Clear Chat
+                    </button>
+                    <button class="action-btn" id="exportChat">
+                        <i class="fas fa-download"></i>
+                        Export Chat
+                    </button>
+                    <button class="action-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be inserted here by JavaScript -->
+                </div>
+
+                <!-- Connection Status -->
+                <div class="connection-status" id="connectionStatus">
+                    <div class="status-indicator connected"></div>
+                    <span>✅ Backend connected on port 5000</span>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container">
+                    <div class="input-wrapper">
+                        <input type="text" id="messageInput" placeholder="Type your message here... (Press Enter to send)">
+                        <button id="sendButton" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="chatbot-footer">
+            <div class="footer-content">
+                <p>Made with 💖 by Kumar Harsh</p>
+                <div class="footer-contacts">
+                    <span><i class="fas fa-envelope"></i> kh949118@gmail.com</span>
+                    <span><i class="fas fa-phone"></i> +91-9279157296</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Uploaded Files</h3>
+            <div id="filePreview"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
