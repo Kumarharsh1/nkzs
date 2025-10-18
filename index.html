@@ -20,29 +20,29 @@
         }
 
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            flex-direction: column;
+            padding: 0;
         }
 
         .chat-container {
             width: 100%;
             max-width: 1200px;
-            height: 90vh;
+            height: calc(100vh - 60px);
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
+            border-radius: 20px 20px 0 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             display: flex;
             overflow: hidden;
+            margin: 0 auto;
         }
 
         /* Sidebar Styles */
         .sidebar {
             width: 300px;
-            background: linear-gradient(180deg, #2c3e50 0%, #1a2530 100%);
+            background: #2c3e50;
             color: white;
             padding: 20px;
             display: flex;
@@ -101,7 +101,6 @@
         .assistant-card.active {
             border-color: #ff6b8b;
             background: rgba(255, 107, 139, 0.2);
-            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
         }
 
         .assistant-icon {
@@ -132,12 +131,13 @@
         }
 
         #uploadArea {
-            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border: 2px dashed #bdc3c7;
             border-radius: 12px;
             padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            background: rgba(248, 249, 250, 0.8);
         }
 
         #uploadArea:hover {
@@ -187,7 +187,6 @@
 
         .action-btn:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
         }
 
         .connection-status {
@@ -209,12 +208,10 @@
 
         .status-indicator.connected {
             background: #2ecc71;
-            box-shadow: 0 0 10px #2ecc71;
         }
 
         .status-indicator.error {
             background: #e74c3c;
-            box-shadow: 0 0 10px #e74c3c;
         }
 
         /* Chat Area Styles */
@@ -231,7 +228,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         .current-assistant {
@@ -249,7 +245,6 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
         }
 
         .assistant-info h3 {
@@ -269,7 +264,6 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            background: #f8f9fa;
         }
 
         .message {
@@ -309,12 +303,10 @@
 
         .user-avatar {
             background: #3498db;
-            box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
         }
 
         .bot-avatar-small {
             background: #ff6b8b;
-            box-shadow: 0 2px 5px rgba(255, 107, 139, 0.3);
         }
 
         .message-sender {
@@ -333,44 +325,40 @@
             border-radius: 18px;
             font-size: 0.95rem;
             line-height: 1.5;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .user-message .message-content {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: #3498db;
             color: white;
             border-bottom-right-radius: 5px;
         }
 
         .bot-message .message-content {
-            background: white;
+            background: #f1f2f6;
             color: #2c3e50;
             border-bottom-left-radius: 5px;
-            border: 1px solid #e9ecef;
         }
 
         .system-message {
             align-self: center;
             text-align: center;
-            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            background: #ffeaa7;
             color: #2d3436;
             padding: 10px 20px;
             border-radius: 20px;
             font-size: 0.9rem;
             max-width: 70%;
-            box-shadow: 0 2px 10px rgba(253, 203, 110, 0.3);
         }
 
         .error-message {
             align-self: center;
             text-align: center;
-            background: linear-gradient(135deg, #fab1a0, #e17055);
-            color: white;
+            background: #fab1a0;
+            color: #d63031;
             padding: 10px 20px;
             border-radius: 20px;
             font-size: 0.9rem;
             max-width: 70%;
-            box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
         }
 
         .typing-indicator {
@@ -378,12 +366,10 @@
             align-items: center;
             gap: 10px;
             padding: 15px;
-            background: white;
+            background: #f1f2f6;
             border-radius: 18px;
             border-bottom-left-radius: 5px;
             color: #7f8c8d;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .typing-dots {
@@ -412,7 +398,6 @@
             border-top: 1px solid #ecf0f1;
             display: flex;
             gap: 10px;
-            background: white;
         }
 
         #messageInput {
@@ -423,13 +408,11 @@
             outline: none;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: #f8f9fa;
         }
 
         #messageInput:focus {
             border-color: #ff6b8b;
             box-shadow: 0 0 0 2px rgba(255, 107, 139, 0.2);
-            background: white;
         }
 
         #sendButton {
@@ -445,12 +428,67 @@
             justify-content: center;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
         }
 
         #sendButton:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 107, 139, 0.6);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+        }
+
+        /* Footer Styles */
+        .footer {
+            width: 100%;
+            background: linear-gradient(90deg, #2c3e50, #1a252f);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #ff6b8b;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #ff6b8b, #ffa86b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 25px;
+            font-size: 1rem;
+        }
+
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-contact a:hover {
+            color: #ff6b8b;
+            transform: translateY(-2px);
+        }
+
+        .footer-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Modal Styles */
@@ -488,7 +526,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         .modal-header h3 {
@@ -523,12 +560,6 @@
             border: 1px solid #ecf0f1;
             border-radius: 12px;
             margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .file-preview-item:hover {
-            border-color: #ff6b8b;
-            box-shadow: 0 2px 10px rgba(255, 107, 139, 0.1);
         }
 
         .file-info {
@@ -569,7 +600,7 @@
         @media (max-width: 768px) {
             .chat-container {
                 flex-direction: column;
-                height: 95vh;
+                height: calc(100vh - 80px);
             }
 
             .sidebar {
@@ -588,6 +619,16 @@
 
             .message {
                 max-width: 90%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -686,6 +727,23 @@
                 <button id="sendButton">
                     <i class="fas fa-paper-plane"></i>
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                Made by Kumar Harsh
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:kh949118@gmail.com">
+                    <i class="fas fa-envelope"></i> kh949118@gmail.com
+                </a>
+                <span>
+                    <i class="fas fa-phone"></i> 9279157296
+                </span>
             </div>
         </div>
     </div>
@@ -802,8 +860,8 @@
                 this.processFiles(files);
                 
                 // Reset styles
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = '#bdc3c7';
+                e.currentTarget.style.background = 'rgba(248, 249, 250, 0.8)';
             }
 
             handleFileSelect(e) {
@@ -897,7 +955,7 @@
                     
                 } catch (error) {
                     this.hideTypingIndicator();
-                    this.addErrorMessage(`Connection failed: ${error.message}. Make sure backend is running.`);
+                    this.addErrorMessage(`Connection failed: ${error.message}. Make sure backend is running on port 7999.`);
                     console.error('API Error:', error);
                 }
             }
@@ -1056,13 +1114,13 @@
                     if (response.ok) {
                         const data = await response.json();
                         console.log('Backend response:', data);
-                        this.updateConnectionStatus('connected', '✅ Backend connected');
+                        this.updateConnectionStatus('connected', '✅ Backend connected on port 7999');
                     } else {
                         throw new Error(`HTTP ${response.status}`);
                     }
                 } catch (error) {
                     console.error('Backend connection failed:', error);
-                    this.updateConnectionStatus('error', '❌ Backend not connected - make sure server is running');
+                    this.updateConnectionStatus('error', '❌ Backend not connected - make sure server is running on port 7999');
                 }
             }
 
@@ -1096,7 +1154,7 @@
                     </div>
                 `).join('');
                 
-                modal.style.display = 'flex';
+                modal.style.display = 'block';
             }
 
             removeFile(fileName) {
